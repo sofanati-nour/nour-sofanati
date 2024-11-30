@@ -1,0 +1,91 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "titleEN",
+          "name": "titleEN",
+          "type": "string"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "descriptionEN",
+          "name": "descriptionEN",
+          "type": "string"
+        },
+        {
+          "title": "tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "category",
+          "name": "category",
+          "type": "categories"
+        },
+        {
+          "title": "categoryEN",
+          "name": "categoryEN",
+          "type": "string"
+        },
+        {
+          "title": "categorySlug",
+          "name": "categorySlug",
+          "type": "string"
+        },
+        {
+          "title": "isFeature",
+          "name": "isFeature",
+          "type": "boolean"
+        },
+        {
+          "title": "language",
+          "name": "language",
+          "type": "string"
+        },
+        {
+          "title": "direction",
+          "name": "direction",
+          "type": "string"
+        },
+        {
+          "title": "categories",
+          "name": "categories",
+          "type": "categories"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "next",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.preview.host": "http://localhost:3000",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "posts",
+      "path": "[[workspace]]/posts"
+    }
+  ]
+}
