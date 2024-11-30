@@ -15,13 +15,13 @@ export default async function ArticlePage({
     notFound();
   }
   return (
-    <section>
+    <>
       <h1>{post?.metadata.title}</h1>
       <p>{post?.metadata.publishedAt}</p>
       <p>{post?.metadata.summary}</p>
       <hr />
       <MDXRemote source={post?.content} />
-    </section>
+    </>
   );
 }
 

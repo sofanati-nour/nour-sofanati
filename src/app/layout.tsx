@@ -18,6 +18,7 @@ const IbmPlexSansArabic = IBM_Plex_Sans_Arabic({
 });
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function RootLayout({
   children,
@@ -46,6 +47,9 @@ export default function RootLayout({
   ];
   return (
     <html lang="ar" dir="rtl">
+      <head>
+        <meta name="theme-color" content="#1f2937" />
+      </head>
       <body className={`${IbmPlexSansArabic.className} antialiased`}>
         <div
           className={`min-h-screen ${isDarkMode ? "bg-gray-900 text-gray-100" : "bg-gray-50 text-gray-900"}`}
@@ -60,12 +64,21 @@ export default function RootLayout({
                   <Menu className="w-6 h-6" />
                 </button>
 
-                <h1 className="text-2xl font-bold">نور صوفاناتي</h1>
+                {usePathname().includes("blog/") ? (
+                  <span className="text-2xl font-bold">نور صوفاناتي</span>
+                ) : (
+                  <h1 className="text-2xl font-bold">نور صوفاناتي</h1>
+                )}
 
                 <div className="flex items-center gap-4">
                   <button
                     onClick={toggleDarkMode}
                     className="p-2 rounded-full hover:bg-gray-700"
+                    aria-label={
+                      isDarkMode
+                        ? "تبديل إلى الوضع الضوء"
+                        : "تبديل إلى الوضع الظلام"
+                    }
                   >
                     {isDarkMode ? (
                       <Sun className="w-5 h-5" />
@@ -129,15 +142,24 @@ export default function RootLayout({
                   <div
                     className={`p-6 rounded-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} shadow-lg `}
                   >
-                    <div className="text-center mb-4">
+                    <address className="text-center mb-4">
                       <Image
                         src="/nour-sofanati-portrait.jpg"
                         alt="نور صوفاناتي بورتريت"
+                        title="نور صوفاناتي بورتريت"
                         width={96}
                         height={96}
+                        loading="eager"
                         className="w-24 h-24 rounded-full mx-auto mb-4"
                       />
-                      <h3 className="text-xl font-bold mb-2">نور صوفاناتي</h3>
+                      <a
+                        rel="author"
+                        className="author text-xl font-bold mb-2"
+                        itemProp="author"
+                        href="https://nour-sofanati.com/about"
+                      >
+                        نور صوفاناتي
+                      </a>
                       <p
                         className={`mb-4 text-balance ${isDarkMode ? "text-gray-300" : "text-gray-600"}`}
                       >
@@ -158,7 +180,7 @@ export default function RootLayout({
                           SimpleBackups.com
                         </a>
                       </p>
-                    </div>
+                    </address>
 
                     {/* Social Links */}
                     <div className="flex justify-center gap-4">
@@ -188,7 +210,12 @@ export default function RootLayout({
                   <div
                     className={`p-6 rounded-lg ${isDarkMode ? "bg-gray-800" : "bg-white"} shadow-lg`}
                   >
-                    <h3 className="text-xl font-bold mb-4">التصنيفات</h3>
+                    <p
+                      aria-label="التصنيفات"
+                      className="text-xl font-bold mb-4"
+                    >
+                      التصنيفات
+                    </p>
                     <div className="space-y-2">
                       <a href="#" className="block hover:text-blue-500">
                         تطوير الويب
