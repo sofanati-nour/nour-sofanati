@@ -57,7 +57,7 @@ export async function GET() {
       {
         width: 1200,
         height: 630,
-      }
+      },
     );
   } catch (e: Error | unknown) {
     console.log(`${e instanceof Error ? e.message : "Unknown error occurred"}`);
